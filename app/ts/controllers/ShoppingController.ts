@@ -15,6 +15,7 @@ export class ShoppingController {
 
     constructor(){
         this._itemList = new ItemList();
+        this._itemView = new ItemView('#item-view');
 
         this._inputItem = $('#item');
     }
