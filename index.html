@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="app/css/bootstrap.css">
+    <link rel="stylesheet" href="app/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="app/css/style.css">
+</head>
+
+<body class="container">
+    <h1 class="text-center">Shopping List</h1>
+
+    <form class="form" id="item-form">
+        <div class="form-group">
+            <label for="data">Item:</label>
+            <input type="text" id="item" class="form-control" required autofocus/>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Add">
+    </form>
+<br><br>
+
+    <div id="item-view"></div>
+
+    <button class="btn btn-primary">Import</button>
+    <button class="btn btn-danger">Clear</button>
+
+    <script src="app/lib/jquery.min.js"></script>
+    <script src="app/js/views/View.js"></script>
+    <script src="app/js/views/ItemView.js"></script>
+    <script src="app/js/models/Item.js"></script>
+    <script src="app/js/models/ItemList.js"></script>
+    <script src="app/js/controllers/ShoppingController.js"></script>
+    <script>
+        let controller = new ShoppingController();
+        $('.form').submit(controller.add.bind(controller))
+    </script>
+
+</body>
+
+</html>
