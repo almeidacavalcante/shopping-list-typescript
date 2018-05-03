@@ -1,14 +1,20 @@
-class ShoppingController {
+import { ItemList } from "../models/ItemList";
+import { ItemView } from "../views/ItemView";
+import { Item } from "../models/Item";
+import { lazy } from "../helpers/decorators/index";
+
+export class ShoppingController {
+    
     
     private _itemList: ItemList;
     private _itemView: ItemView;
     private _inputItem: JQuery;
+
+    @lazy('.form')
     private _form: JQuery;
 
     constructor(){
         this._itemList = new ItemList();
-        this._itemView = new ItemView('#item-view');
-        this._form = $('.form');
 
         this._inputItem = $('#item');
     }
@@ -20,7 +26,7 @@ class ShoppingController {
         event.preventDefault();
         
         let item = new Item(this._inputItem.val());
-        debugger
+        
         this._itemList.add(item);
         this._itemView.update(this._itemList);
     }
@@ -28,14 +34,17 @@ class ShoppingController {
     /**
      * import
      */
-    public import() {
-        
+    public import(event: Event): void {
+        event.preventDefault();
     }
 
     /**
      * clear
      */
-    public clear() {
-        
+    public clear(event: Event): void {
+        event.preventDefault();
+
+        this._itemList = new ItemList();
+        this._itemView.update(this._itemList);
     }
 }

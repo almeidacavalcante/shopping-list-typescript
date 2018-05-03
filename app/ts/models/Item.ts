@@ -1,14 +1,7 @@
-class Item {
+export class Item {
     
     constructor(
-        private _name: string
+        readonly name: string
     ){}
-
-    get name(): string {
-        return this._name;
-    }
-
-    set name(text: string) {
-        this.name = text;
-    }
+    
 }

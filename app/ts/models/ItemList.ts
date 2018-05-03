@@ -1,8 +1,10 @@
-class ItemList {
+import { Item } from "./Item";
+
+export class ItemList {
     private _items: Item[] = [];
 
     get items(): Item[] {
-        return this._items;
+        return ([] as Item[]).concat(this._items);
     }
 
     /**

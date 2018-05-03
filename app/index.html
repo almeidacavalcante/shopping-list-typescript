@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="container">
+    <h1 class="text-center">Shopping List</h1>
+
+    <form class="form" id="item-form">
+        <div class="form-group">
+            <label for="data">Item:</label>
+            <input type="text" id="item" class="form-control" required autofocus/>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Add">
+    </form>
+<br><br>
+
+    <div id="item-view"></div>
+
+    <button id="import" class="btn btn-primary" >Import</button>
+    <button id="clear" class="btn btn-danger">Clear</button>
+
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/system.js"></script>
+
+    <script>
+        System.defaultJSExtensions = true;
+        System.import('js/app.js').catch(err => console.error(err));
+    </script>
+
+</body>
+
+</html>
