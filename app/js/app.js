@@ -12,6 +12,7 @@ System.register(["./controllers/ShoppingController"], function (exports_1, conte
             controller = new ShoppingController_1.ShoppingController();
             $('.form').submit(controller.add.bind(controller));
             $('#clear').click(controller.clear.bind(controller));
+            $('#import').click(controller.import.bind(controller));
         }
     };
 });
